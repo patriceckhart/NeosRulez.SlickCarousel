@@ -1,0 +1,17 @@
+prototype(NeosRulez.SlickCarousel:SlickCarouselItem) < prototype(Neos.Neos:Content) {
+    templatePath = 'resource://NeosRulez.SlickCarousel/Private/Templates/NodeTypes/SlickCarouselItem.html'
+
+    image = ${q(node).property('image')}
+
+    text = ${q(node).property('text')}
+
+    link = ${q(node).property('link')}
+    link.@process.convertUris = Neos.Neos:ConvertUris {
+        forceConversion = true
+    }
+
+    attributesInner = Neos.Fusion:Attributes
+    attributesInner.class = ${'slick-carousel-item' + (slickCarouselItemsIteration.isFirst ? ' active' : '')}
+    iteration = ${slickCarouselItemsIteration}
+
+}

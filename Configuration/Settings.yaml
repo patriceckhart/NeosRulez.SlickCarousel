@@ -1,0 +1,16 @@
+Neos:
+  Neos:
+    userInterface:
+      translation:
+        autoInclude:
+          NeosRulez.SlickCarousel:
+            - 'NodeTypes/*'
+      defaultLanguage: 'de'
+    nodeTypes:
+      groups:
+        slick:
+          position: 'end'
+          label: 'Slick'
+    fusion:
+      autoInclude:
+        NeosRulez.SlickCarousel: true

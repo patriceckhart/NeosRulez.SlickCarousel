@@ -1,0 +1,40 @@
+'NeosRulez.SlickCarousel:SlickCarousel':
+  superTypes:
+    'Neos.Neos:Content': TRUE
+  childNodes:
+    slickCarouselItems:
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'NeosRulez.SlickCarousel:SlickCarouselItem': TRUE
+  ui:
+    label: i18n
+    group: 'slick'
+    icon: 'icon-picture'
+    inlineEditable: TRUE
+    inspector:
+      groups:
+        settings:
+          label: NeosRulez.Bootstrap:Main:settings
+          icon: 'icon-cog'
+  properties:
+    containerwidth:
+      ui:
+        reloadPageIfChanged: TRUE
+    showarrows:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: i18n
+        reloadPageIfChanged: TRUE
+        inspector:
+          group: 'settings'
+    showdots:
+      type: boolean
+      defaultValue: TRUE
+      ui:
+        label: i18n
+        reloadPageIfChanged: TRUE
+        inspector:
+          group: 'settings'

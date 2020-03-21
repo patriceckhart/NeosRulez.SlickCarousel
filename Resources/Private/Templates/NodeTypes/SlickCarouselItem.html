@@ -1,0 +1,36 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+<div class="slick-carousel-item">
+    <div{attributesInner -> f:format.raw()}>
+        <f:if condition="{image}">
+            <f:then>
+                <f:if condition="{link}">
+                    <f:then>
+                        <a href="{link}">
+                            <f:render section="image" arguments="{_all}" />
+                        </a>
+                    </f:then>
+                    <f:else>
+                        <f:render section="image" arguments="{_all}" />
+                    </f:else>
+                </f:if>
+            </f:then>
+            <f:else>
+                <f:security.ifAccess privilegeTarget="Neos.Neos:Backend.GeneralAccess">
+                    <f:if condition="{node.context.workspace.name} != 'live'">
+                        <img src="{f:uri.resource(package: 'Neos.Neos', path: 'Images/dummy-image.svg')}" title="" alt="" class="neos-handle" />
+                    </f:if>
+                </f:security.ifAccess>
+            </f:else>
+        </f:if>
+        <f:if condition="{text}">
+            <div class="slick-carousel-caption d-none d-md-block">
+                <f:format.raw>{text}</f:format.raw>
+            </div>
+        </f:if>
+    </div>
+</div>
+<f:section name="image">
+    <media:image image="{image}" class="d-none d-md-block" width="1920c" height="500c" allowCropping="TRUE" allowUpScaling="TRUE" alt="{f:if(condition: '{title}', then: '{title}')}" />
+    <media:image image="{image}" class="d-md-none" width="600c" height="300c" allowCropping="TRUE" allowUpScaling="TRUE" alt="{f:if(condition: '{title}', then: '{title}')}" />
+</f:section>

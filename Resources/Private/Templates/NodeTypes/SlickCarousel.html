@@ -1,0 +1,9 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+<div{attributes -> f:format.raw()}>
+    <div{attributesInner -> f:format.raw()}>
+        <div id="{node.identifier}" class="slick-carousel{f:if(condition:'!{showarrows}', then: ' no-arrows')}{f:if(condition:'!{showdots}', then: ' no-dots')}">
+            {slickCarouselItems -> f:format.raw()}
+        </div>
+    </div>
+</div>

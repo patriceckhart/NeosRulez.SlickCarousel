@@ -1,0 +1,27 @@
+{
+    "description": "A Neos CMS slick carousel plugin",
+    "license": "GPL-3.0+",
+    "type": "neos-plugin",
+    "name": "neosrulez/slickcarousel",
+    "authors": [
+        {
+            "name": "Patric Eckhart",
+            "email": "patric@inoovum.io",
+            "homepage": "https://www.inoovum.io",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "neos/neos": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "NeosRulez\\SlickCarousel\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "NeosRulez.SlickCarousel"
+        }
+    }
+}
