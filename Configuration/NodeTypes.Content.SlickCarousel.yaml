@@ -38,3 +38,19 @@
         reloadPageIfChanged: TRUE
         inspector:
           group: 'settings'
+    textalignment:
+      defaultValue: 'center'
+      ui:
+        label: i18n
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'settings'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'center':
+                label: i18n
+              'start':
+                label: i18n
+              'end':
+                label: i18n

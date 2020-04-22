@@ -104,7 +104,9 @@
 
 .slick-carousel {
 
-    .slick-carousel-caption { }
+    .slick-carousel-item { position: relative;
+        .slick-carousel-caption { position: absolute; left:0; top:0; width:100%; height:100%; }
+    }
 
     .slick-dots { display:block; margin:0; padding:0; position: relative; width:100%; text-align:center; margin-top:-3em;
         li { display:inline-block; margin:0; padding:0; margin-left:0.2em; margin-right:0.2em; background:none; border:1px solid #fff; width:1em; height:1em; text-indent: -99999px; border-radius:999px; @include transition(0.2s); cursor: pointer;

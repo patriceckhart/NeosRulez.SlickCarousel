@@ -11,6 +11,18 @@
             <trans-unit id="properties.showdots" xml:space="preserve">
 				<source>Indikatoren anzeigen</source>
 			</trans-unit>
+            <trans-unit id="properties.textalignment" xml:space="preserve">
+				<source>Textausrichtung</source>
+			</trans-unit>
+            <trans-unit id="properties.textalignment.selectBoxEditor.values.center" xml:space="preserve">
+                <source>Mittig</source>
+            </trans-unit>
+            <trans-unit id="properties.textalignment.selectBoxEditor.values.start" xml:space="preserve">
+                <source>Oben</source>
+            </trans-unit>
+            <trans-unit id="properties.textalignment.selectBoxEditor.values.end" xml:space="preserve">
+                <source>Unten</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>
