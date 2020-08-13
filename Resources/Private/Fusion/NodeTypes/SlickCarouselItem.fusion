@@ -1,13 +1,11 @@
 prototype(NeosRulez.SlickCarousel:SlickCarouselItem) < prototype(Neos.Neos:Content) {
     templatePath = 'resource://NeosRulez.SlickCarousel/Private/Templates/NodeTypes/SlickCarouselItem.html'
+
+    @context.asset = ${q(node).property('image')}
     image = Neos.NodeTypes:Image {
-        #width = '2000c'
-        #height = '300c'
-        #maximumWidth = '2000'
-        #maximumHeight = '300'
-        #allowUpScaling = true
-        #allowCropping = true
+        asset = ${asset}
     }
+
     text = ${q(node).property('text')}
     link = ${q(node).property('link')}
     link.@process.convertUris = Neos.Neos:ConvertUris {
