@@ -12,16 +12,7 @@
 </f:if>
 <f:if condition="{image}">
     <f:then>
-        <f:if condition="{link}">
-            <f:then>
-                <a href="{link}">
-                    <f:render section="image" arguments="{_all}" />
-                </a>
-            </f:then>
-            <f:else>
-                <f:render section="image" arguments="{_all}" />
-            </f:else>
-        </f:if>
+        <f:render section="image" arguments="{_all}" />
     </f:then>
     <f:else>
         <f:security.ifAccess privilegeTarget="Neos.Neos:Backend.GeneralAccess">

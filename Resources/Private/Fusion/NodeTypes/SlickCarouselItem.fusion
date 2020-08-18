@@ -2,8 +2,70 @@ prototype(NeosRulez.SlickCarousel:SlickCarouselItem) < prototype(Neos.Neos:Conte
     templatePath = 'resource://NeosRulez.SlickCarousel/Private/Templates/NodeTypes/SlickCarouselItem.html'
 
     @context.asset = ${q(node).property('image')}
+
     image = Neos.NodeTypes:Image {
         asset = ${asset}
+        @context.width = 2000
+        @context.height = 500
+        @context.width2x = 2000
+        @context.height2x = 500
+        carouselItemImageClass = ${renderedImgClass + ' img-fullwidth'}
+        renderer = afx`
+            <a @if.render={props.renderAsLink} href={props.linkUri} target={props.linktarget} >
+                <Neos.Fusion:Tag tagName="img" attributes.src={props.asset1x} attributes.srcset={props.srcset} attributes.class={props.carouselItemImageClass} attributes.title={props.title} attributes.alt={props.altText} />
+            </a>
+            <Neos.Fusion:Tag @if.render={!props.renderAsLink} tagName="img" attributes.src={props.asset1x} attributes.srcset={props.srcset} attributes.class={props.carouselItemImageClass} attributes.title={props.title} attributes.alt={props.altText} />
+        `
+    }
+
+    text = ${q(node).property('text')}
+    link = ${q(node).property('link')}
+    link.@process.convertUris = Neos.Neos:ConvertUris {
+        forceConversion = true
+    }
+    attributesInner = Neos.Fusion:Attributes
+    attributesInner.class = ${'slick-carousel-item' + (slickCarouselItemsIteration.isFirst ? ' active' : '')}
+    iteration = ${slickCarouselItemsIteration}
+    textalignment = ${q(node).closest('[instanceof NeosRulez.SlickCarousel:SlickCarousel]').property('textalignment')}
+}
+
+prototype(xNeosRulez.SlickCarousel:SlickCarouselItem) < prototype(Neos.Neos:Content) {
+    templatePath = 'resource://NeosRulez.SlickCarousel/Private/Templates/NodeTypes/SlickCarouselItem.html'
+
+    asset = ${q(node).property('image')}
+    @context.asset = ${q(node).property('image')}
+    originalAsset = ${this.asset.originalAsset}
+    @context.originalAsset = ${this.asset.originalAsset}
+
+    width = ${this.asset.width}
+    height = ${this.asset.height}
+
+    @context.width = ${this.width}
+    @context.height = ${this.height}
+    @context.width2x = ${this.width * 2}
+    @context.height2x = ${this.height * 2}
+
+    asset1x = Neos.Neos:ImageUri {
+        asset = ${originalAsset}
+        allowUpScaling = true
+        allowCropping = true
+        width = ${width}
+        height = ${height}
+    }
+
+    asset2x = Neos.Neos:ImageUri {
+        asset = ${originalAsset}
+        allowUpScaling = true
+        allowCropping = true
+        width = ${width2x}
+        height = ${height2x}
+    }
+
+    @context.srcset = ${this.asset1x + ' 1x, ' + this.asset2x + ' 2x'}
+
+    image = NeosRulez.Bootstrap:Component.ResponsiveImage {
+        asset1x = ${asset1x}
+        srcset = ${srcset}
     }
 
     text = ${q(node).property('text')}
