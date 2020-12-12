@@ -1,33 +1,36 @@
-'NeosRulez.SlickCarousel:SlickCarouselItem':
+'NeosRulez.SlickCarousel:Component.SlickCarouselItem':
   superTypes:
-    'Neos.Neos:Content': TRUE
+    'Neos.Neos:Content': true
   ui:
     group: 'slick'
     label: i18n
-    icon: 'icon-picture'
+    icon: far fa-image
     inspector:
       groups:
         settings:
           label: NeosRulez.Bootstrap:Main:settings
-          icon: 'icon-cog'
+          icon: icon-cog
   properties:
     image:
       type: 'Neos\Media\Domain\Model\ImageInterface'
       ui:
         label: i18n
-        reloadPageIfChanged: TRUE
+        reloadPageIfChanged: true
         inspector:
           group: 'settings'
+          editorOptions:
+            features:
+              mediaBrowser: true
+              crop: true
+              resize: false
     text:
       type: string
       ui:
         label: i18n
-        reloadPageIfChanged: TRUE
-        inspector:
-          group: 'settings'
-          editor: 'Neos.Neos/Inspector/Editors/RichTextEditor'
+        inlineEditable: true
+        inline:
           editorOptions:
-            placeholder: '<p>placeholder</p>'
+            placeholder: '<p>Text</p>'
             autoparagraph: true
             linking:
               anchor: true
@@ -60,15 +63,29 @@
               ol: true
               ul: true
               a: false
+    textColor:
+      type: string
+      defaultValue: ''
+      ui:
+        label: i18n
+        reloadIfChanged: true
+        inspector:
+          group: 'settings'
+          editor: 'Shel.Neos.ColorPicker/ColorPickerEditor'
+          editorOptions:
+            mode: 'hex'
+            picker: true
+            fields: true
+            presetColors: [ ]
     link:
       type: string
       ui:
-        reloadPageIfChanged: TRUE
+        reloadPageIfChanged: true
         label: i18n
         inspector:
           group: 'settings'
           editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
           editorOptions:
-            assets: TRUE
+            assets: true
     containerwidth:
       ui: ~

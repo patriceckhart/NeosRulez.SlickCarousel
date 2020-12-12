@@ -1,0 +1,29 @@
+prototype(Neos.Neos:Page) {
+    head {
+        NeosRulezSlickCarouselStyles = NeosRulez.ScssParser:ScssFile
+        NeosRulezSlickCarouselStyles {
+            source = 'resource://NeosRulez.SlickCarousel/Private/Styles/slick.scss'
+            inline = FALSE
+            format = 'compressed'
+            outputFolder = 'resource://NeosRulez.SlickCarousel/Public/Styles/'
+            @if.contentIsPresent = ${q(documentNode).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof NeosRulez.SlickCarousel:Component.SlickCarousel]').is()}
+        }
+        NeosRulezSlickCarouselJQuery = Neos.Fusion:Tag {
+            tagName = 'script'
+            attributes {
+                src = Neos.Fusion:ResourceUri {
+                    path = 'resource://NeosRulez.SlickCarousel/Public/JavaScript/jquery-3.2.1.min.js'
+                }
+            }
+            @if.contentIsPresent = ${q(documentNode).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof NeosRulez.SlickCarousel:Component.SlickCarousel]').is()}
+        }
+        NeosRulezSlickCarouselScripts = NeosRulez.JsMinifier:JsFile
+        NeosRulezSlickCarouselScripts {
+            @position = 'after NeosRulezBootstrapJs'
+            source = 'resource://NeosRulez.SlickCarousel/Private/JavaScript/slick.js'
+            inline = FALSE
+            outputFolder = 'resource://NeosRulez.SlickCarousel/Public/JavaScript/'
+            @if.contentIsPresent = ${q(documentNode).children('[instanceof Neos.Neos:ContentCollection]').find('[instanceof NeosRulez.SlickCarousel:Component.SlickCarousel]').is()}
+        }
+    }
+}

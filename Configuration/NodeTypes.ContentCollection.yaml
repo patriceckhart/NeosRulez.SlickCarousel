@@ -1,4 +1,4 @@
 'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
-      'NeosRulez.SlickCarousel:SlickCarouselItem': FALSE
+      'NeosRulez.SlickCarousel:Component.SlickCarouselItem': false

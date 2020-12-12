@@ -13,7 +13,7 @@
     ],
     "require": {
         "neos/neos": "*",
-        "neosrulez/bootstrap": "^3.3"
+        "shel/neos-colorpicker": "^1.3"
     },
     "autoload": {
         "psr-4": {

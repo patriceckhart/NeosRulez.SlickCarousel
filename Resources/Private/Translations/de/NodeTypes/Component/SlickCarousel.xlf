@@ -5,12 +5,6 @@
             <trans-unit id="ui.label" xml:space="preserve">
 				<source>Slick Karussell</source>
 			</trans-unit>
-            <trans-unit id="properties.showarrows" xml:space="preserve">
-				<source>Pfeile anzeigen</source>
-			</trans-unit>
-            <trans-unit id="properties.showdots" xml:space="preserve">
-				<source>Indikatoren anzeigen</source>
-			</trans-unit>
             <trans-unit id="properties.textalignment" xml:space="preserve">
 				<source>Textausrichtung</source>
 			</trans-unit>
@@ -23,6 +17,9 @@
             <trans-unit id="properties.textalignment.selectBoxEditor.values.end" xml:space="preserve">
                 <source>Unten</source>
             </trans-unit>
+            <trans-unit id="properties.imageHeight" xml:space="preserve">
+				<source>Höhe der Bilder</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

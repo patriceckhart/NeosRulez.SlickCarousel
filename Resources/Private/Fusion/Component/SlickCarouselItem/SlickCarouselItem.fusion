@@ -1,0 +1,51 @@
+prototype(NeosRulez.SlickCarousel:Component.SlickCarouselItem) < prototype(Neos.Neos:ContentComponent) {
+    nodetype = ${String.replace(String.replace(String.toLowerCase(node.nodetype), '.', '-'), ':', '-')}
+
+    image = ${node.properties.image}
+    width = 2000
+    height= ${imageHeight}
+
+    link = ${node.properties.link}
+    link.@process.convertUris = Neos.Neos:ConvertUris {
+        forceConversion = true
+    }
+
+    text = ${node.properties.text}
+    textalignment = ${textalignment}
+    textColor = ${node.properties.textColor ? node.properties.textColor : '#FFFFFF'}
+
+    itemClass = ${'position-relative ' + this.nodetype + (slickCarouselItemsIteration.isFirst ? ' active' : '')}
+
+    renderer = afx`
+        <div class={props.itemClass} >
+            <NeosRulez.SlickCarousel:Component.SlickCarouselItem.Image image={props.image} width={props.width} height={props.height} link={props.link} text={props.text} textalignment={props.textalignment} textColor={props.textColor} />
+        </div>
+    `
+}
+
+prototype(NeosRulez.SlickCarousel:Component.SlickCarouselItem.Image) < prototype(Neos.Fusion:Component) {
+    backendATag = ${site.context.inBackend ? 'div' : 'a'}
+
+    renderer = afx`
+        <Neos.Fusion:Tag @if.render={props.image && props.link} tagName={props.backendATag} attributes.href={props.link} attributes.class="d-block" >
+            <NeosRulez.SlickCarousel:Component.SlickCarouselItem.Text text={props.text} textalignment={props.textalignment} textColor={props.textColor} />
+            <Neos.Neos:ImageTag asset={props.image} width={props.width} height={props.height} allowUpScaling="true" allowCropping="true" attributes.class="img-fluid img-fullwidth" />
+        </Neos.Fusion:Tag>
+        <NeosRulez.SlickCarousel:Component.SlickCarouselItem.Text @if.render={props.image && !props.link} text={props.text} textalignment={props.textalignment} textColor={props.textColor} />
+        <Neos.Neos:ImageTag @if.render={props.image && !props.link} asset={props.image} width={props.width} height={props.height} allowUpScaling="true" allowCropping="true" attributes.class="img-fluid img-fullwidth" />
+    `
+}
+
+prototype(NeosRulez.SlickCarousel:Component.SlickCarouselItem.Text) < prototype(Neos.Fusion:Component) {
+    rowClass = ${'row h-100 align-items-' + props.textalignment}
+    styleAttribute = ${props.textColor ? 'color:' + props.textColor + ';' : false}
+    renderer = afx`
+        <div class="position-absolute w-100 h-100 item-caption">
+            <div class={props.rowClass} >
+                <div class="col-12" style={props.styleAttribute} >
+                    <Neos.Neos:Editable property="text" />
+                </div>
+            </div>
+        </div>
+    `
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file original="" product-name="NeosRulez.SlickCarousel" source-language="de" datatype="plaintext">
+        <body>
+            <trans-unit id="properties.showarrows" xml:space="preserve">
+				<source>Pfeile anzeigen</source>
+			</trans-unit>
+            <trans-unit id="properties.showdots" xml:space="preserve">
+				<source>Indikatoren anzeigen</source>
+			</trans-unit>
+            <trans-unit id="properties.autoplay" xml:space="preserve">
+				<source>Autostart</source>
+			</trans-unit>
+            <trans-unit id="properties.fade" xml:space="preserve">
+				<source>Fading statt sliding</source>
+			</trans-unit>
+            <trans-unit id="properties.speed" xml:space="preserve">
+				<source>Geschwindigkeit (Millisekunden)</source>
+			</trans-unit>
+            <trans-unit id="properties.autoplaySpeed" xml:space="preserve">
+				<source>Starten nach ... (Millisekunden)</source>
+			</trans-unit>
+            <trans-unit id="properties.infinite" xml:space="preserve">
+				<source>Unendlich wiederholen</source>
+			</trans-unit>
+            <trans-unit id="properties.slidesToShow" xml:space="preserve">
+				<source>Slides sichtbar</source>
+			</trans-unit>
+            <trans-unit id="properties.slidesToScroll" xml:space="preserve">
+				<source>Slides scrollen</source>
+			</trans-unit>
+        </body>
+    </file>
+</xliff>

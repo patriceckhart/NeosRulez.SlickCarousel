@@ -1,0 +1,75 @@
+'NeosRulez.SlickCarousel:Mixin.SlickOptions':
+  abstract: true
+  properties:
+    showarrows:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: i18n
+        reloadPageIfChanged: true
+        inspector:
+          group: 'settings'
+    showdots:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: i18n
+        reloadPageIfChanged: true
+        inspector:
+          group: 'settings'
+    autoplay:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: i18n
+        reloadPageIfChanged: true
+        inspector:
+          group: 'settings'
+    fade:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: i18n
+        reloadPageIfChanged: true
+        inspector:
+          group: 'settings'
+    speed:
+      type: string
+      defaultValue: '800'
+      ui:
+        label: i18n
+        reloadPageIfChanged: true
+        inspector:
+          group: 'settings'
+    autoplaySpeed:
+      type: string
+      defaultValue: '3000'
+      ui:
+        label: i18n
+        reloadPageIfChanged: true
+        inspector:
+          group: 'settings'
+    infinite:
+      type: boolean
+      defaultValue: true
+      ui:
+        label: i18n
+        reloadPageIfChanged: true
+        inspector:
+          group: 'settings'
+    slidesToShow:
+      type: string
+      defaultValue: '1'
+      ui:
+        label: i18n
+        reloadPageIfChanged: true
+        inspector:
+          group: 'settings'
+    slidesToScroll:
+      type: string
+      defaultValue: '1'
+      ui:
+        label: i18n
+        reloadPageIfChanged: true
+        inspector:
+          group: 'settings'

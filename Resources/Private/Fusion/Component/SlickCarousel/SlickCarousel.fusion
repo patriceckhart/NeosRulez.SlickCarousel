@@ -1,0 +1,88 @@
+prototype(NeosRulez.SlickCarousel:Component.SlickCarousel) < prototype(Neos.Neos:ContentComponent) {
+    slickCarouselItems = Neos.Neos:ContentCollection {
+        nodePath = 'slickCarouselItems'
+        content.iterationName = 'slickCarouselItemsIteration'
+    }
+
+    @context.showarrows = ${node.properties.showarrows ? 'true' : 'false'}
+    @context.showdots = ${node.properties.showdots ? 'true' : 'false'}
+    @context.autoplay = ${node.properties.autoplay ? 'true' : 'false'}
+    @context.fade = ${node.properties.fade ? 'true' : 'false'}
+    @context.speed = ${node.properties.speed ? node.properties.speed : 800}
+    @context.autoplaySpeed = ${node.properties.autoplaySpeed ? node.properties.autoplaySpeed : 3000}
+    @context.infinite = ${node.properties.infinite ? 'true' : 'false'}
+    @context.slidesToShow = ${node.properties.slidesToShow ? node.properties.slidesToShow : 1}
+    @context.slidesToScroll = ${node.properties.slidesToScroll ? node.properties.slidesToScroll : 1}
+
+    @context.imageHeight = ${node.properties.imageHeight ? node.properties.imageHeight : false}
+    @context.textalignment = ${node.properties.textalignment ? node.properties.textalignment : false}
+
+    identifier = ${'slick__carousel__' + node.identifier}
+
+    renderer = afx`
+        <NeosRulez.SlickCarousel:Component.AbstractContent>
+            <div id={props.identifier} class="slick-carousel" >
+                {props.slickCarouselItems}
+            </div>
+            <NeosRulez.SlickCarousel:Component.SlickCarousel.ScriptTag identifier={props.identifier} />
+        </NeosRulez.SlickCarousel:Component.AbstractContent>
+    `
+}
+
+prototype(NeosRulez.SlickCarousel:Component.SlickCarousel.ScriptTag) < prototype(Neos.Fusion:Component) {
+    jsScriptLine01 = ${'<script>'}
+    jsScriptLine02 = ${'$("#' + props.identifier + ' .neos-contentcollection").slick({'}
+    jsScriptLine03 = ${'dots: ' + showdots + ','}
+    jsScriptLine04 = ${'rows: 0, slide: ".neosrulez-slickcarousel-component-slickcarouselitem",'}
+    jsScriptLine05 = ${'infinite: ' + infinite + ','}
+    jsScriptLine06 = ${'speed: ' + speed + ','}
+    jsScriptLine07 = ${'slidesToShow: ' + slidesToShow + ','}
+    jsScriptLine08 = ${'slidesToScroll: ' + slidesToScroll + ','}
+    jsScriptLine09 = ${'arrows: ' + showarrows + ','}
+    jsScriptLine10 = ${'autoplay: ' + autoplay + ','}
+    jsScriptLine11 = ${'autoplaySpeed: ' + autoplaySpeed + ','}
+    jsScriptLine12 = ${'fade: ' + fade + ','}
+    jsScriptLine13 = ${'responsive: ['}
+    jsScriptLine14 = ${'{'}
+    jsScriptLine15 = ${'breakpoint: 992,'}
+    jsScriptLine16 = ${'settings: {'}
+    jsScriptLine17 = ${'slidesToShow: 1,'}
+    jsScriptLine18 = ${'slidesToScroll: 1,'}
+    jsScriptLine19 = ${'dots: false,'}
+    jsScriptLine20 = ${'arrows: false,'}
+    jsScriptLine21 = ${'}'}
+    jsScriptLine22 = ${'}'}
+    jsScriptLine23 = ${']'}
+    jsScriptLine24 = ${'});'}
+    jsScriptLine25 = ${'$("' + props.identifier + '").show();'}
+    jsScriptLine26 = ${'</script>'}
+
+    renderer = afx`
+        {props.jsScriptLine01}
+        {props.jsScriptLine02}
+        {props.jsScriptLine03}
+        {props.jsScriptLine04}
+        {props.jsScriptLine05}
+        {props.jsScriptLine06}
+        {props.jsScriptLine07}
+        {props.jsScriptLine08}
+        {props.jsScriptLine09}
+        {props.jsScriptLine10}
+        {props.jsScriptLine11}
+        {props.jsScriptLine12}
+        {props.jsScriptLine13}
+        {props.jsScriptLine14}
+        {props.jsScriptLine15}
+        {props.jsScriptLine16}
+        {props.jsScriptLine17}
+        {props.jsScriptLine18}
+        {props.jsScriptLine19}
+        {props.jsScriptLine20}
+        {props.jsScriptLine21}
+        {props.jsScriptLine22}
+        {props.jsScriptLine23}
+        {props.jsScriptLine24}
+        {props.jsScriptLine25}
+        {props.jsScriptLine26}
+    `
+}

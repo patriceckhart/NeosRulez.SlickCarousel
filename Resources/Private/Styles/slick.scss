@@ -102,31 +102,17 @@
 @mixin transition($property) { transition: all $property; -webkit-transition: all $property; -moz-transition: all $property; }
 @mixin scale($propertyScale) { -webkit-transform: scale($propertyScale); -moz-transform: scale($propertyScale); -ms-transform: scale($propertyScale); -o-transform: scale($propertyScale); transform: scale($propertyScale); }
 
-.slick-carousel {
-
-    .slick-carousel-item { position: relative;
-        .slick-carousel-caption { position: absolute; left:0; top:0; width:100%; height:100%; }
-    }
-
+.slick-carousel { overflow:hidden;
     .slick-dots { display:block; margin:0; padding:0; position: relative; width:100%; text-align:center; margin-top:-3em;
         li { display:inline-block; margin:0; padding:0; margin-left:0.2em; margin-right:0.2em; background:none; border:1px solid #fff; width:1em; height:1em; text-indent: -99999px; border-radius:999px; @include transition(0.2s); cursor: pointer;
             &:hover { background:rgba(255,255,255,0.3); }
         }
         li.slick-active { background:#fff; }
     }
-
     .slick-arrow { color:rgba(255,255,255,0.8); font-size:2em; top:50%; position:absolute; margin-top:-1em; cursor: pointer; @include transition(0.2s); z-index:999;
         background:none; border:0; outline:0; @include transition(0.2s);
         &:hover { color:#FFF; }
     }
     .slick-prev { left:0; margin-left:1em; }
     .slick-next { right:0; margin-right:1em; }
-
-    &.no-arrows {
-        .slick-arrow { display:none !important; }
-    }
-    &.no-dots {
-        .slick-dots { display:none !important; }
-    }
-
 }
