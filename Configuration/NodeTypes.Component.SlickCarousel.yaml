@@ -40,11 +40,29 @@
                 label: i18n
               'end':
                 label: i18n
-    imageHeight:
+    aspectRatio:
       type: string
+      defaultValue: '4:3'
       ui:
         label: i18n
         reloadPageIfChanged: true
         inspector:
-          group: settings
+          group: 'settings'
           position: 'end'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              'square':
+                label: i18n
+              '4:3':
+                label: '4:3'
+              '16:9':
+                label: '16:9'
+              '21:9':
+                label: '21:9'
+              '3:2':
+                label: '3:2'
+              '7:5':
+                label: '7:5'
+              '5:4':
+                label: '5:4'

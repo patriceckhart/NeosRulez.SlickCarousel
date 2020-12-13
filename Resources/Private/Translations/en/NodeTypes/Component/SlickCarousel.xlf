@@ -20,6 +20,12 @@
             <trans-unit id="properties.imageHeight" xml:space="preserve">
 				<source>Images height</source>
 			</trans-unit>
+            <trans-unit id="properties.aspectRatio" xml:space="preserve">
+				<source>Aspect ratio</source>
+			</trans-unit>
+            <trans-unit id="properties.aspectRatio.selectBoxEditor.values.square" xml:space="preserve">
+                <source>Square</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -3,7 +3,7 @@ prototype(NeosRulez.SlickCarousel:Component.SlickCarouselItem) < prototype(Neos.
 
     image = ${node.properties.image}
     width = 2000
-    height= ${imageHeight}
+    aspectRatio= ${aspectRatio}
 
     link = ${node.properties.link}
     link.@process.convertUris = Neos.Neos:ConvertUris {
@@ -18,13 +18,15 @@ prototype(NeosRulez.SlickCarousel:Component.SlickCarouselItem) < prototype(Neos.
 
     renderer = afx`
         <div class={props.itemClass} >
-            <NeosRulez.SlickCarousel:Component.SlickCarouselItem.Image image={props.image} width={props.width} height={props.height} link={props.link} text={props.text} textalignment={props.textalignment} textColor={props.textColor} />
+            <NeosRulez.SlickCarousel:Component.SlickCarouselItem.Image image={props.image} width={props.width} aspectRatio={props.aspectRatio} link={props.link} text={props.text} textalignment={props.textalignment} textColor={props.textColor} />
         </div>
     `
 }
 
 prototype(NeosRulez.SlickCarousel:Component.SlickCarouselItem.Image) < prototype(Neos.Fusion:Component) {
     backendATag = ${site.context.inBackend ? 'div' : 'a'}
+
+    height = ${aspectRatio == '4:3' ? 1500 : aspectRatio == '16:9' ? 1125 : aspectRatio == '3:2' ? 1333 : aspectRatio == '7:5' ? 1429 : aspectRatio == '5:4' ? 1600 : aspectRatio == '21:9' ? 857 : aspectRatio == 'square' ? 2000 : 800}
 
     renderer = afx`
         <Neos.Fusion:Tag @if.render={props.image && props.link} tagName={props.backendATag} attributes.href={props.link} attributes.class="d-block" >
