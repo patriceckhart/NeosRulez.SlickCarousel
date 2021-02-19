@@ -31,10 +31,11 @@ prototype(NeosRulez.SlickCarousel:Component.SlickCarousel) < prototype(Neos.Neos
 }
 
 prototype(NeosRulez.SlickCarousel:Component.SlickCarousel.ScriptTag) < prototype(Neos.Fusion:Component) {
+    element = ${this.slide ? this.slide : '.neosrulez-slickcarousel-component-slickcarouselitem'}
     jsScriptLine01 = ${'<script>'}
-    jsScriptLine02 = ${'$("#' + props.identifier + ' .neos-contentcollection").slick({'}
+    jsScriptLine02 = ${'$("#' + this.identifier + ' .neos-contentcollection' +'").slick({'}
     jsScriptLine03 = ${'dots: ' + showdots + ','}
-    jsScriptLine04 = ${'rows: 0, slide: ".neosrulez-slickcarousel-component-slickcarouselitem",'}
+    jsScriptLine04 = ${'rows: 0, slide: "' + this.element + '",'}
     jsScriptLine05 = ${'infinite: ' + infinite + ','}
     jsScriptLine06 = ${'speed: ' + speed + ','}
     jsScriptLine07 = ${'slidesToShow: ' + slidesToShow + ','}
@@ -55,7 +56,7 @@ prototype(NeosRulez.SlickCarousel:Component.SlickCarousel.ScriptTag) < prototype
     jsScriptLine22 = ${'}'}
     jsScriptLine23 = ${']'}
     jsScriptLine24 = ${'});'}
-    jsScriptLine25 = ${'$("' + props.identifier + '").show();'}
+    jsScriptLine25 = ${'$("' + this.identifier + '").show();'}
     jsScriptLine26 = ${'</script>'}
 
     renderer = afx`

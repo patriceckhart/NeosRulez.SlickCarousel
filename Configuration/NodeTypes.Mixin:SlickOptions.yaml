@@ -27,7 +27,7 @@
           group: 'settings'
     fade:
       type: boolean
-      defaultValue: true
+      defaultValue: false
       ui:
         label: i18n
         reloadPageIfChanged: true
