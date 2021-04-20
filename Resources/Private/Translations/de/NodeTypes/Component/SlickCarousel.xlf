@@ -26,6 +26,9 @@
             <trans-unit id="properties.aspectRatio.selectBoxEditor.values.square" xml:space="preserve">
                 <source>Quadratisch</source>
             </trans-unit>
+            <trans-unit id="content.noItems" xml:space="preserve">
+                <source>Es wurden noch keine Karussell-Elemente angelegt</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

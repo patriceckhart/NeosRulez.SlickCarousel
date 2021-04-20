@@ -8,7 +8,7 @@
         label: i18n
         reloadPageIfChanged: true
         inspector:
-          group: 'settings'
+          group: slickCarousel
     showdots:
       type: boolean
       defaultValue: true
@@ -16,7 +16,7 @@
         label: i18n
         reloadPageIfChanged: true
         inspector:
-          group: 'settings'
+          group: slickCarousel
     autoplay:
       type: boolean
       defaultValue: true
@@ -24,7 +24,7 @@
         label: i18n
         reloadPageIfChanged: true
         inspector:
-          group: 'settings'
+          group: slickCarousel
     fade:
       type: boolean
       defaultValue: false
@@ -32,7 +32,7 @@
         label: i18n
         reloadPageIfChanged: true
         inspector:
-          group: 'settings'
+          group: slickCarousel
     speed:
       type: string
       defaultValue: '800'
@@ -40,7 +40,7 @@
         label: i18n
         reloadPageIfChanged: true
         inspector:
-          group: 'settings'
+          group: slickCarousel
     autoplaySpeed:
       type: string
       defaultValue: '3000'
@@ -48,7 +48,7 @@
         label: i18n
         reloadPageIfChanged: true
         inspector:
-          group: 'settings'
+          group: slickCarousel
     infinite:
       type: boolean
       defaultValue: true
@@ -56,7 +56,7 @@
         label: i18n
         reloadPageIfChanged: true
         inspector:
-          group: 'settings'
+          group: slickCarousel
     slidesToShow:
       type: string
       defaultValue: '1'
@@ -64,7 +64,7 @@
         label: i18n
         reloadPageIfChanged: true
         inspector:
-          group: 'settings'
+          group: slickCarousel
     slidesToScroll:
       type: string
       defaultValue: '1'
@@ -72,4 +72,4 @@
         label: i18n
         reloadPageIfChanged: true
         inspector:
-          group: 'settings'
+          group: slickCarousel

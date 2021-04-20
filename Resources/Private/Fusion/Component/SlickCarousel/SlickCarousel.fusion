@@ -14,7 +14,6 @@ prototype(NeosRulez.SlickCarousel:Component.SlickCarousel) < prototype(Neos.Neos
     @context.slidesToShow = ${node.properties.slidesToShow ? node.properties.slidesToShow : 1}
     @context.slidesToScroll = ${node.properties.slidesToScroll ? node.properties.slidesToScroll : 1}
 
-//    @context.imageHeight = ${node.properties.imageHeight ? node.properties.imageHeight : false}
     @context.aspectRatio = ${node.properties.aspectRatio ? node.properties.aspectRatio : false}
     @context.textalignment = ${node.properties.textalignment ? node.properties.textalignment : false}
 

@@ -7,9 +7,9 @@
     icon: far fa-image
     inspector:
       groups:
-        settings:
-          label: NeosRulez.Bootstrap:Main:settings
-          icon: icon-cog
+        slickCarouseItem:
+          label: NeosRulez.SlickCarousel:NodeTypes.Component.SlickCarouselItem:ui.label
+          icon: far fa-image
   properties:
     image:
       type: 'Neos\Media\Domain\Model\ImageInterface'
@@ -17,7 +17,7 @@
         label: i18n
         reloadPageIfChanged: true
         inspector:
-          group: 'settings'
+          group: slickCarouseItem
           editorOptions:
             features:
               mediaBrowser: true
@@ -70,7 +70,7 @@
         label: i18n
         reloadIfChanged: true
         inspector:
-          group: 'settings'
+          group: slickCarouseItem
           editor: 'Shel.Neos.ColorPicker/ColorPickerEditor'
           editorOptions:
             mode: 'hex'
@@ -83,7 +83,7 @@
         reloadPageIfChanged: true
         label: i18n
         inspector:
-          group: 'settings'
+          group: slickCarouseItem
           editor: 'Neos.Neos/Inspector/Editors/LinkEditor'
           editorOptions:
             assets: true
